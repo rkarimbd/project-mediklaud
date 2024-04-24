@@ -15,7 +15,7 @@ services:
             - MSSQL_SA_PASSWORD=myStong_Password123# 
     mediklaud:
         container_name: mediklaudapi
-        image: ${DOCKER_REGISTRY-}mediklaud
+        image: ${DOCKER_REGISTRY-}mediklaud:latest
         ports:
             - 8001:80 
         build:
