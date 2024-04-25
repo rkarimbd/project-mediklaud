@@ -49,8 +49,8 @@ namespace mediklaud.Controllers
         // GET: Appointments/Create
         public IActionResult Create()
         {
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "DoctorId", "MobileNo");
-            ViewData["PatientId"] = new SelectList(_context.Patients, "PatientId", "Address");
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "DoctorId", "Name");
+            ViewData["PatientId"] = new SelectList(_context.Patients, "PatientId", "FirstName");
             return View();
         }
 
