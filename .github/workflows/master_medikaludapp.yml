@@ -50,7 +50,7 @@ jobs:
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_292cd048ba93467a96082ae474455e9b }}
         images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_33a2dcc624204d4cb76b37aa284a3f08 }}/mediklaud:${{ github.sha }}'
     - name: Run EF 
-        run:| 
+      run: | 
              dotnet tool install --global dotnet-ef
              dotnet tool restore
              dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
