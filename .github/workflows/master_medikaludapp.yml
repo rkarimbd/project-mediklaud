@@ -48,4 +48,4 @@ jobs:
         app-name: 'medikaludapp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_292cd048ba93467a96082ae474455e9b }}
-        images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_33a2dcc624204d4cb76b37aa284a3f08 }}/mediklaud:${{ github.sha }}'
+        images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_33a2dcc624204d4cb76b37aa284a3f08 }}/mediklaud:${{ github.sha }}'  
