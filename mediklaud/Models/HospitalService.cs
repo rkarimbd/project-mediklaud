@@ -20,9 +20,7 @@ namespace mediklaud.Models
         public bool Status { get; set; }
 
 
-        //[Required]
-        //public int UserId { get; set; }
-        //public UserInfo UserInfo { get; set; } // Navigation property for UserInfo
+      
 
         public virtual ICollection<Billing> Billings { get; set; }
 

@@ -35,9 +35,6 @@ namespace mediklaud.Models
         public string  Comments {  get; set; }
 
 
-        //[Required]
-        //public int UserId { get; set; }
-        //public UserInfo UserInfo { get; set; } // Navigation property for UserInfo
 
         // One-to-one relationship with Billing
         public Billing Billing { get; set; } // Navigation property for Billing

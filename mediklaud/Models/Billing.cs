@@ -33,9 +33,7 @@ namespace mediklaud.Models
 
         public string Comments { get; set; }
 
-        //[Required]
-        //public int UserId { get; set; }
-      //  public UserInfo UserInfo { get; set; } // Navigation property for UserInfo
+       
 
     }
 }

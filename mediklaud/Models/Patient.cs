@@ -25,9 +25,7 @@ namespace mediklaud.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
 
-        //[Required]
-        //public int UserId { get; set; }
-        //public UserInfo UserInfo { get; set; } // Navigation property for UserInfo
+       
 
         public virtual ICollection<Appointment> Appointments { get; set; }
     }

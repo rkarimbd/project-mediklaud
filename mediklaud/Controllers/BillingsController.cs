@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using mediklaud.Context;
 using mediklaud.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace mediklaud.Controllers
 {
@@ -20,6 +21,8 @@ namespace mediklaud.Controllers
         }
 
         // GET: Billings
+
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Billings.Include(b => b.Appointment).Include(b => b.Service);

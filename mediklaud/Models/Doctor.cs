@@ -23,9 +23,7 @@ namespace mediklaud.Models
         [Column(TypeName = "decimal(18, 2)")]
         public decimal ConsultationFee { get; set; }
 
-        //[Required]
-        //public int UserId { get; set; }
-        //public UserInfo UserInfo { get; set; } // Navigation property for UserInfo
+       
 
 
         public virtual ICollection<Appointment> Appointments { get; set; }
