@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: JMi-HOSPITAL Build and deploy container app to Azure Web App - mediklaud
+name: Build and deploy container app to Azure Web App - jmihospital
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://mediklaudconatiner.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_749f01f7a81142c4a0504d4cca650fb8 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a029287de2f148bba2270ab8f3f47cb4 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_eb3413baf19e4652bd694f4ee3513012 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_1c70abf5d0804fadbc02ca50c656976a }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_749f01f7a81142c4a0504d4cca650fb8 }}/mediklaud:${{ github.sha }}
+        tags: mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_eb3413baf19e4652bd694f4ee3513012 }}/mediklaud:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -45,12 +45,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'mediklaud'
+        app-name: 'jmihospital'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_007d2614cb1a4ce184ec6802b1295f63 }}
-        images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_749f01f7a81142c4a0504d4cca650fb8 }}/mediklaud:${{ github.sha }}'  
-    - name: Run EF 
-      run: | 
-        dotnet tool install --global dotnet-ef
-        dotnet tool restore
-        dotnet ef database update    
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_36ae3d92a28c4beb8aa01c1118e9a966 }}
+        images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_eb3413baf19e4652bd694f4ee3513012 }}/mediklaud:${{ github.sha }}'
