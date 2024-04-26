@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mediklaud", "mediklaud\medi
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E724AE01-AE9A-498C-A8D2-C93AB3FC7D08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediklaud.Tests", "mediklaudtesting\Mediklaud.Tests\Mediklaud.Tests.csproj", "{69C7A58E-6FC7-4BB5-A6E6-5B6C01757BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediklaud.Tests", "mediklaudtesting\Mediklaud.Tests\Mediklaud.Tests.csproj", "{69C7A58E-6FC7-4BB5-A6E6-5B6C01757BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
