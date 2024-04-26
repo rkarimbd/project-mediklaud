@@ -49,3 +49,9 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_007d2614cb1a4ce184ec6802b1295f63 }}
         images: 'mediklaudconatiner.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_749f01f7a81142c4a0504d4cca650fb8 }}/mediklaud:${{ github.sha }}'
+    - name: Run EF 
+         run:| 
+         dotnet tool install --global dotnet-ef
+         dotnet tool restore
+         dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
+   
